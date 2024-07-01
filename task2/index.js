@@ -1,25 +1,12 @@
-const express = require("express");
-require("dotenv").config();
-const Routes = require("./routes/data");
+const express = require('express');
+const productsRoutes = require('./routes/productsRoutes');
+
 const app = express();
-var cors = require("cors");
+
+// Register products routes
+app.use('/api', productsRoutes);
+
 const PORT = process.env.PORT || 3000;
-
-app.use(
-  cors({
-    origin: "*",
-  })
-);
-// Middleware
-app.use(express.json());
-
-app.use("/api/v1", Routes);
-
-// CORS Configuration
 app.listen(PORT, () => {
-  console.log(`THE SERVER IS UP AND RUNNING AT PORT ${PORT}`);
-});
-
-app.get("*", (req, res) => {
-  res.send(`<h1>Backend is Running and this is '/' Route</h1>`);
+  console.log(`Server is running on port ${PORT}`);
 });
