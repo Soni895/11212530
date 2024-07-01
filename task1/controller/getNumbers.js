@@ -7,7 +7,7 @@ let windowNumbers = [];
 exports.getNumbers = async (req, res) => {
   const { numberid } = req.params;
 
-  // Define valid qualifiers
+  // Define valid qualifiers with their respective URLs and filters
   const validQualifiers = {
     'p': { url: 'http://test-server.com/numbers/prime', filter: isPrime },
     'f': { url: 'http://test-server.com/numbers/fibonacci', filter: isFibonacci },
@@ -40,12 +40,15 @@ exports.getNumbers = async (req, res) => {
     // Calculate average of current window numbers
     const average = calculateAverage(windowNumbers);
 
-    return res.json({
+    // Prepare response according to the specified format
+    const responseObject = {
       numbers: uniqueNumbers,
       windowPrevState,
       windowCurrState: windowNumbers,
-      average
-    });
+      avg: average.toFixed(2) // Ensure average is formatted to two decimal places
+    };
+
+    return res.json(responseObject);
   } catch (error) {
     console.error('Error fetching numbers:', error.message);
     return res.status(500).json({ error: 'Error fetching numbers' });
