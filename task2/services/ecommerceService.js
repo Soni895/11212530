@@ -2,7 +2,7 @@ const axios = require('axios');
 const { param } = require('../routes/productsRoutes');
 
 const baseURL = 'http://20.244.56.144/test';
-const bearerToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE5ODIwNDIxLCJpYXQiOjE3MTk4MjAxMjEsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjRlZTlmNTBmLTVlZWQtNDM0MS1hYTdhLTBhY2NmODg4NjY5YiIsInN1YiI6InZhbnNobmFyYW5nNDk5MDZAZ21haWwuY29tIn0sImNvbXBhbnlOYW1lIjoiZ29NYXJ0IiwiY2xpZW50SUQiOiI0ZWU5ZjUwZi01ZWVkLTQzNDEtYWE3YS0wYWNjZjg4ODY2OWIiLCJjbGllbnRTZWNyZXQiOiJTQXJRYUtVRGpIdExKTFlhIiwib3duZXJOYW1lIjoidmFuc2giLCJvd25lckVtYWlsIjoidmFuc2huYXJhbmc0OTkwNkBnbWFpbC5jb20iLCJyb2xsTm8iOiIxMTIxMjUyMCJ9.GS_WCOcQkYazmYBCrng-AhpEVYZtEKayPg_kd5JQa60';
+const bearerToken = 'eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE5ODI0MDIwLCJpYXQiOjE3MTk4MjM3MjAsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6Ijk1ZWY2NGZjLWY1OTctNDVmZC04Mzg2LTU1ZTc4MDQyOTZjNCIsInN1YiI6IkRhcnNoYW5zb25pODk1QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdvTWFydCIsImNsaWVudElEIjoiOTVlZjY0ZmMtZjU5Ny00NWZkLTgzODYtNTVlNzgwNDI5NmM0IiwiY2xpZW50U2VjcmV0IjoibGVHWXRQd2dQYVhzbW5WeSIsIm93bmVyTmFtZSI6IkRhcnNoYW4iLCJvd25lckVtYWlsIjoiRGFyc2hhbnNvbmk4OTVAZ21haWwuY29tIiwicm9sbE5vIjoiMTEyMTI1MzAifQ.HMvsO2mpm5J7CbyaAA-cnUGWhqNH7975r6tZdWUtjXE';
 const fetchProducts = async (company, category, top, minPrice, maxPrice) => {
     const url = `${baseURL}/companies/${company}/categories/${category}/products?top=${top}&minPrice=${minPrice}&maxPrice=${maxPrice}`;
     // const params = {
