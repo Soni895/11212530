@@ -1,13 +1,12 @@
 
-
-
+const axios = require('axios');
 const WINDOW_SIZE = 10;
 const TIMEOUT_MS = 500;
 let window = [];
 
 exports.getNumbers = async (req, res) => {
 
-    console.log(req.params);
+   console.log(req.params);
   const { numberid } = req.params;
   const validIds = ['p', 'f', 'e', 'r'];
 

@@ -1,11 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const {cal, GetAllLogs}= require("../controller/calculation");
+const{getNumbers}= require("../controller/getNumbers");
 
-
-
-router.post("/",cal);
-
-
+router.get('/numbers/:numberid', getNumbers);
 module.exports = router;
 
